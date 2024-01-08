@@ -59,12 +59,12 @@ def create_search(db: Session, search: SearchBase):
     result = pipe(search.__getattribute__('seq'),search.__getattribute__('labels'))
     modifiedSearch : SearchCreate = {
         'seq' : result['sequence'],
-        'lables' : '#'.join(result['labels']),
+        'labels' : '#'.join(result['labels']),
         'scores' : '#'.join(map(str,result['scores'])),
     }
     db_var = Search(
         seq = modifiedSearch['seq'],
-        lables = modifiedSearch['labels'],
+        labels = modifiedSearch['labels'],
         scores = modifiedSearch['scores']
     )
     db.add(db_var)
