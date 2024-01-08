@@ -84,7 +84,7 @@ def dbToSchema (db : Search):
     schema : SearchResponse = {
         'id' : db.__getattribute__('id'),
         'seq' : db.__getattribute__('seq'),
-        'lables' : str (db.__getattribute__('labels')).split('#'),
+        'labels' : str (db.__getattribute__('labels')).split('#'),
         'scores' : str (db.__getattribute__('scores')).split('#'),
     }
     return schema
